@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>flipped learning study</title>
+
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="../css/approve.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+      <nav style="background:#00B5AD"  class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a style="color:white" class="navbar-brand" href="/list">flipped learning</a>
+        </div>
+        <!-- /.navbar-header -->
+
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i style="color:white" class="fa fa-user fa-fw"></i> <i style="color:white" class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                  <%for(var i = 0;i < length;i++){%>
+                    <li><a href="/main/<%=studygroup[i].studyTitle%>"><i class="fa fa-user fa-fw"></i><%= studygroup[i].studyTitle %></a>
+                    </li>
+                    <%}%>
+                    <li class="divider"></li>
+                    <li><a href="/approve"><i class="fa fa-sign-out fa-fw"></i> study 등록</a></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+
+    </div>
+    <div class="form" >
+      <form class="ui form" method="post" action="/requested">
+        <h2 class="ui dividing header"><%=data.studyTitle%></h2>
+        <div class="field" style="display:inline-block">
+          <label>이름</label>
+          <div class="disabled fields">
+            <div class="field">
+              <input id="input" type="text" name="name" value="<%=data.first%>" placeholder="이름을 입력하세요.">
+            </div>
+          </div>
+        </div>
+        <div class="field" style="display:inline-block">
+          <label>학교</label>
+          <div class="disabled fields">
+            <div class="field">
+              <input id="input" type="text" name="school" value="<%=student.school%>" placeholder="학교를 입력하세요.">
+            </div>
+          </div>
+        </div>
+        <div class="field" style="display:inline-block">
+          <label>학과</label>
+          <div class="disabled fields">
+            <div class="field">
+              <input id="input" type="text" name="major" value="<%=student.major%>" placeholder="학과를 입력하세요.">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>스터디 명</label>
+          <div class="two disabled fields">
+            <div class="field">
+              <input type="text" name="studyTitle" value="<%=data.studyTitle%>" placeholder="스터디 명을 입력하세요.">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>스터디 주제</label>
+          <div class="two disabled fields">
+            <div class="field">
+              <input type="text" name="studyTopic" value="<%=data.studyTopic%>" placeholder="스터디 주제를 입력하세요.">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>역할 기간</label>
+          <div class="three disabled fields">
+            <div class="field">
+              <input type="number" name="role" value="<%=data.role%>" placeholder="역할기간을 입력하세요." aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>활동 기간</label>
+          <div class="three disabled fields">
+            <div class="field">
+              <input type="DATE" name="active" value="<%=data.active%>" placeholder="활동기간을 입력하세요." aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>교사 학습 기간</label>
+          <div class="three disabled fields">
+            <div class="field">
+              <input type="number" name="teacher" value="<%=data.teacher%>" placeholder="교사 학습기간을 입력하세요." aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>최대 인원</label>
+          <div class="three disabled fields">
+            <div class="field">
+              <input type="number" name="max" value="<%=data.max%>" placeholder="최대 인원을 입력하세요." aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>모임 장소</label>
+          <div class="two disabled fields">
+            <div class="field">
+              <input type="text" name="meet" value="<%=data.meet%>" placeholder="주 모임 장소를 입력하세요." aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>내용</label>
+          <div class="two disabled fields">
+            <div class="field">
+              <input type="text" name="content" value="<%=data.content%>" placeholder="내용을 입력하세요." aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="ui teal basic button">같이하기</button>
+      </form>
+    </div>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="../dist/js/sb-admin-2.js"></script>
+</body>
+</html>

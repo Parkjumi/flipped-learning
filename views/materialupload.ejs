@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>flipped learning study</title>
+
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="../css/approve.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav style="background:#00B5AD"  class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a style="color:white" class="navbar-brand" href="/main/<%=studyTitle%>">flipped learning</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i style="color:white" class="fa fa-bell fa-fw"></i> <i style="color:white" class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i style="color:white" class="fa fa-user fa-fw"></i> <i style="color:white" class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+              <div class="title" style="padding:10px">
+                <i class="teal huge user circle icon" style="display:inline-block"></i>
+                <span><%=name%>님 환영합니다.</span>
+              </div>
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="/"><i class="fa fa-dashboard fa-fw"></i> 내 정보</a>
+                        </li>
+                        <%if(first == name){%>
+                          <li>
+                              <a href="/studysetting/<%=studyTitle%>"><i class="fa fa-table fa-fw"></i> 스터디 관리</a>
+                          </li>
+                          <li>
+                              <a href="#"><i class="fa fa-wrench fa-fw"></i> 자료 관리<span class="fa arrow"></span></a>
+                              <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="/materialupload/<%=studyTitle%>">자료 등록</a>
+                                    </li>
+
+                                  <li>
+                                      <a href="/materialList2/<%=studyTitle%>">자료 목록</a>
+                                  </li>
+                              </ul>
+                              <!-- /.nav-second-level -->
+                          </li>
+                        <%}else{%>
+                          <li>
+                              <a href="/materialList2/<%=studyTitle%>"><i class="fa fa-wrench fa-fw"></i>자료 목록</a>
+                          </li>
+                        <%}%>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+            </nav>
+    </div>
+    <div style="width:1200px;margin:0 auto;padding-top:30px;">
+      <h2 class="ui dividing header">자료 등록</h2>
+      <form enctype="multipart/form-data" method="post" action="/materialupload/<%=studyTitle%>" style="width:1100px;margin:0 auto;padding-top:20px">
+        <div class="form-group" style="width:400px">
+          <label for="자료 제목">자료 제목</label>
+          <input name="materialTitle" type="text" class="form-control" name="title" placeholder="자료 제목을 입력하세요">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">자료 내용</label>
+          <textarea name="materialContent" placeholder="자료 내용을 입력하세요" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">URL</label>
+          <br>
+          <a href="https://www.youtube.com/" target="_blank">유튜브 URL 찾아보기</a>
+          <input name="tag" type="text" class="form-control" name="title" placeholder="iframe 태그를 복사해서 입력하세요(공유->퍼가기->태그)">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">첨부파일</label>
+          <input name="userfile" type="file" id="exampleInputFile" style="background:white">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-default">제출</button>
+      </form>
+    </div>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="../dist/js/sb-admin-2.js"></script>
+</body>
+</html>

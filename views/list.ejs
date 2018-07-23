@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>flipped learning study</title>
+
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="../css/approve.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav style="background:#00B5AD"  class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a style="color:white" class="navbar-brand" href="/list">flipped learning</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i style="color:white" class="fa fa-user fa-fw"></i> <i style="color:white" class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                      <%for(var i = 0;i < studygroup.length;i++){%>
+                        <li><a href="/main/<%=studygroup[i].studyTitle%>"><i class="fa fa-user fa-fw"></i><%= studygroup[i].studyTitle %></a>
+                        </li>
+                        <%}%>
+                        <li class="divider"></li>
+                        <li><a href="/approve"><i class="fa fa-sign-out fa-fw"></i> study 등록</a>
+
+                        <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+    </div>
+    <div style="width:900px;margin: 0 auto;padding-top:20px">
+      <h2 class="ui dividing header">스터디 그룹 목록</h2>
+        <div class="ui cards">
+          <% for(var i = 0;i < length;i++) {%>
+          <div class="card">
+            <div class="content">
+              <div class="header">
+                <form class="formtag" action="/detail" method="post">
+                <input type="hidden" name="title" value="<%=data[i].studyTitle%>">
+                <%=data[i].studyTitle%>
+              </div>
+              <div class="meta">
+                <%=data[i].first%>
+              </div>
+              <div class="description">
+                <%=data[i].content%>
+              </div>
+            </div>
+            <hr style="margin:0">
+            <div class="extra content">
+              <div class="ui two buttons">
+                <button id="btn" type="submit" class="ui green basic button">상세보기</button>
+              </form>
+                <div class="ui basic red button"><%=data[i].append%></div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+    </div>
+    <script>
+      function btn(data){
+        console.log(data);
+        $.ajax({
+          type:"POST",
+          url:"/detail",
+          data:{title:data},
+          success:function (result) {
+
+          }
+        })
+      }
+    </script>
+
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="../dist/js/sb-admin-2.js"></script>
+</body>
+</html>
