@@ -1,36 +1,31 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/)
-[![CDNJS](https://img.shields.io/cdnjs/v/startbootstrap-sb-admin-2.svg)](https://cdnjs.com/libraries/startbootstrap-sb-admin-2)
+#### **플립 러닝을 적용한 그룹 스터디 운영 시스템 구현**
+---
+#### **Summary**
+This is a project to graduate.
+This is a website to operate a group study by applying Flipped-Learning.
+Group studies can be operated with a role rotation system.
 
-[SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/) is an open source, admin dashboard template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+---
+#### **Development Environment**
+1. front-end : html/css/js, semantic UI
+2. server : node.js
+3. database : mysql
+4. IDE : ATOM
 
-## Getting Started
+---
+#### **Result Screen**
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git`
-* Fork the repo
+##### **그룹 스터디 운영 메인 페이지 - 교사 역할 이미지**
+![그룹 스터디 운영 메인 페이지](https://github.com/Parkjumi/flipped-learning/blob/master/img/%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4.PNG?raw=true)
 
-## Using the Source Files
+##### **그룹 스터디 목록 페이지 이미지**
+![그룹 스터디 목록 페이지](https://github.com/Parkjumi/flipped-learning/blob/master/img/%EC%8A%A4%ED%84%B0%EB%94%94%EA%B7%B8%EB%A3%B9%20%EB%AA%A9%EB%A1%9D.PNG?raw=true)
 
-After cloning the repo take a look at the `gulpfile.js` and check out the tasks available:
-* `gulp` The default task will compile the LESS and JS into the `dist` directory and minify the output, and it will copy all vendor libraries from `bower_components` into the `vendor` directory
-* `gulp dev` The dev task will serve up a local version of the template and will watch the LESS, JS, and HTML files for changes and reload the browser windo automatically
+##### **자료 학습 및 댓글 승인 페이지 - 교사 역할 이미지**
+![자료 학습 및 댓글 승인 페이지](https://github.com/Parkjumi/flipped-learning/blob/master/img/%EC%9E%90%EB%A3%8C%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B4%80%EB%A6%AC.PNG?raw=true)
 
-To update dependencies, run `bower update` and then run `gulp copy` to copy the updated dependencies into the `vendor` directory
+##### **자료 학습 및 댓글 삽입 페이지 - 학생 역할 이미지**
+![자료 학습 및 댓글 삽입 페이지](https://github.com/Parkjumi/flipped-learning/blob/master/img/%ED%95%99%EC%83%9D%EC%9E%90%EB%A3%8C%ED%99%94%EB%A9%B4.PNG?raw=true)
 
-## Bugs and Issues
-
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/).
-
-## Creator
-
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
-
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/blob/gh-pages/LICENSE) license.
+##### **Database ER diagram**
+![Database ER다이어그램](https://github.com/Parkjumi/flipped-learning/blob/master/design/DB%20%EC%84%A4%EA%B3%84.PNG?raw=true)
